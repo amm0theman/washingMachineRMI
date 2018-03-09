@@ -16,7 +16,7 @@ public class Server implements Hello, WashStatus {
 	public Server() {
 		myMachines = new WashingMachine[2];
 		myMachines[0] = new WashingMachine("WM One");
-		myMachines[1] = new WashingMachine("WM One");
+		myMachines[1] = new WashingMachine("WM Two");
 	}
 	
 	@Override
@@ -47,7 +47,7 @@ public class Server implements Hello, WashStatus {
 	public String showStatus() throws RemoteException {
 		String tempString = "";
 		for (int i = 0; i < myMachines.length; i++) {
-			tempString += myMachines[0].toString();
+			tempString += myMachines[i].toString();
 		}
 		return tempString;
 	}
